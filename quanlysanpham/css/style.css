@@ -1,0 +1,148 @@
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #f4f7f6; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* Navbar & Footer */
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 50px; 
+    background: #fff; 
+    /* Thanh điều hướng nổi lên */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+}
+.navbar .logo { font-size: 22px; font-weight: 800; text-decoration: none; color: #5b4bfb; letter-spacing: 1px; }
+.navbar .nav-links a { margin-left: 25px; text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
+.navbar .nav-links a:hover { color: #5b4bfb; }
+.footer { text-align: center; padding: 20px; background: #fff; box-shadow: 0 -2px 15px rgba(0,0,0,0.05); color: #666; font-size: 14px; margin-top: auto; }
+
+/* Main Container & Cards - Hiệu ứng nổi mạnh */
+.container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 50px 20px; }
+
+.card { 
+    background: #fff; 
+    width: 100%; 
+    max-width: 450px; 
+    padding: 40px; 
+    border-radius: 16px; 
+    /* Tạo khối nổi bật khỏi nền */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05); 
+    text-align: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px); /* Nhấc nhẹ thẻ lên khi rê chuột */
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.card.large { max-width: 900px; text-align: left; }
+.card h2 { margin-bottom: 30px; font-size: 26px; color: #2c3e50; font-weight: 700; text-align: center; }
+
+/* Forms & Inputs - Hiệu ứng chìm */
+.form-group { text-align: left; margin-bottom: 22px; }
+.form-group label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #4a5568; }
+.form-control { 
+    width: 100%; 
+    padding: 14px 16px; 
+    border: 1px solid #cbd5e0; 
+    background: #f8fafc; 
+    border-radius: 10px; 
+    font-size: 15px; 
+    outline: none; 
+    transition: all 0.3s; 
+    /* Input chìm xuống một chút để card nổi hơn */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.form-control:focus { 
+    border-color: #5b4bfb; 
+    background: #fff;
+    /* Viền phát sáng nhẹ khi click vào */
+    box-shadow: 0 0 0 4px rgba(91, 75, 251, 0.15); 
+}
+textarea.form-control { resize: vertical; min-height: 120px; }
+
+/* Buttons - Hiệu ứng nổi và tương tác */
+.btn { 
+    display: inline-block; 
+    padding: 14px 24px; 
+    border: none; 
+    border-radius: 10px; 
+    font-size: 15px; 
+    font-weight: 600; 
+    text-decoration: none; 
+    cursor: pointer; 
+    text-align: center; 
+    width: 100%; 
+    transition: all 0.3s ease; 
+}
+.btn-primary { 
+    background: linear-gradient(135deg, #6b5bfb 0%, #4a3ae0 100%); 
+    color: #fff; 
+    /* Bóng đổ màu tím cho nút */
+    box-shadow: 0 6px 15px rgba(91, 75, 251, 0.35);
+}
+.btn-primary:hover { 
+    box-shadow: 0 8px 20px rgba(91, 75, 251, 0.5);
+    transform: translateY(-2px);
+}
+.btn-secondary { 
+    background: #fff; 
+    color: #5b4bfb; 
+    border: 2px solid #5b4bfb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.btn-secondary:hover {
+    background: #f4f2ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+.btn-danger { 
+    background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 100%); 
+    color: #fff; 
+    width: auto; 
+    padding: 10px 18px; 
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3); 
+}
+.btn-danger:hover { 
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.45); 
+    transform: translateY(-2px); 
+}
+.btn-small { width: auto; padding: 10px 18px; font-size: 14px; }
+
+/* Utilities */
+.text-center { text-align: center; }
+.mt-3 { margin-top: 15px; }
+.mt-4 { margin-top: 25px; }
+.mb-4 { margin-bottom: 25px; }
+.link { color: #5b4bfb; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.link:hover { color: #4a3ae0; text-decoration: underline; }
+.d-flex { display: flex; gap: 15px; justify-content: center; }
+
+/* Dashboard Overview - Các khối nổi bật */
+.dashboard-stats { display: flex; justify-content: space-between; gap: 25px; margin-bottom: 40px; }
+.stat-box { 
+    background: #fff; 
+    padding: 35px 25px; 
+    border-radius: 16px; 
+    /* Khối thống kê nổi lên rõ rệt */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    flex: 1; 
+    text-align: center; 
+    transition: all 0.3s;
+    border-top: 4px solid #5b4bfb;
+}
+.stat-box:hover { transform: translateY(-7px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); }
+.stat-box h3 { font-size: 15px; color: #718096; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;}
+.stat-box .number { font-size: 40px; font-weight: 800; color: #2d3748; }
+
+/* Tables */
+table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; }
+table th, table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid #edf2f7; }
+table th { font-weight: 600; color: #4a5568; background-color: #f8fafc; text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px; }
+table tr { transition: background-color 0.2s; }
+table tr:hover { background-color: #f8fafc; }
+table th:first-child { border-top-left-radius: 10px; border-bottom-left-radius: 10px; }
+table th:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
